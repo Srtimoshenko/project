@@ -1,0 +1,9 @@
+---
+
+- name: Install MySQL server
+  apt:
+    name: "{{ mysql_list }}"  
+    state: latest
+
+
+

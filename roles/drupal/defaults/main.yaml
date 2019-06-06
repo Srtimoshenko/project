@@ -1,0 +1,23 @@
+mysql_list:
+  - mysql-server
+  - mysql-client  
+
+apache_list:
+  - apache2
+  - php7.2 
+  - php7.2-mysql
+  - libapache2-mod-php7.2
+
+php_list:
+  - php7.2-gd
+  - php7.2-mbstring
+  - php7.2-xml
+
+apache_vhosts_filename: "vhosts.conf"
+
+db_name: drupal
+db_user: drupal_user
+db_password: drupal_db_pass
+
+
+

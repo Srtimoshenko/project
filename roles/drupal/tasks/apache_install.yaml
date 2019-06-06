@@ -1,0 +1,20 @@
+---
+- name: apahe install
+  apt:
+    name: "{{ apache_list }}"
+    state: latest
+
+- name: php install
+  apt:
+    name: "{{ php_list }}"
+    state: latest
+  notify: restart apache
+
+- name: Apache | Add apache vhosts configuration.
+  template:
+    src: "./templates/vhosts.conf.j2"
+    dest: "/etc/apache2/sites-enabled/{{ apache_vhosts_filename }}"
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart apache
